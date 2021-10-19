@@ -16,7 +16,7 @@ const particlesOptions = {
       value: 30,
       density: {
         enable: true,
-        value_area:800
+        value_area:400
       }
     }
   }
@@ -78,7 +78,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://myfacedetection-app.herokuapp.com/imageurl', {
+    fetch('https://smart-brain-ashokkr.herokuapp.com/imageurl', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -88,7 +88,7 @@ class App extends Component {
     .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://myfacedetection-app.herokuapp.com/image', {
+          fetch('https://smart-brain-ashokkr.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
